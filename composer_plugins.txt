@@ -8,8 +8,43 @@ Laravel
     composer require barryvdh/laravel-ide-helper
     composer require barryvdh/laravel-debugbar
 
-    Beyondecode
-    composer require beyondecode/laravel-query-detector
+    Beyond Code
+    composer require beyondcode/laravel-query-detector
+    composer require beyondcode/laravel-comments
+        https://github.com/beyondcode/laravel-comments
+
+
+    Documentation Laravel Routes
+    composer require gussrw/laravel-routes
+        https://github.com/GussRw/Documentation-Laravel-Routes
+            php artisan route:docs
+                Route description
+                    The description is optional, but if you want to add them create a PHP comment over each route in the web.php file with @description.
+                        /**
+                        * @description Show the home page of the site
+                        */
+                        Route::get('/home', 'HomeController@index') -> name('home.index');
+                    Resources routes
+                        The descriptions in the resource type routes are identified by their method in the controller.
+                        /**
+                        * @index Show the main view
+                        * @create Show the view to create a photo
+                        * @store Save a photo in database
+                        * @edit Show the view to edit a photo
+                        * @update Update photo data in database
+                        * @destroy Delete a photo in database
+                        */
+                        Route::resource('photos', 'PhotoController');
+                    Params
+                        Routes params are defined with @param name Description, you can use @param in resource type routes.
+                        /**
+                        * @description Download photo with the photo id.
+                        * @param id ID of the photo in database
+                        */
+                        Route::get('/photo/{id}/download', 'PhotoController@download');
+
+    LaRecipe
+    composer require binarytorch/larecipe
 
     Spatie
     composer require spatie/laravel-backup
@@ -17,6 +52,7 @@ Laravel
 
     Kitlong
     composer require kitlong/laravel-migrations-generator --dev
+
 
     Sail
     composer require laravel/sail --dev
