@@ -1,0 +1,74 @@
+PHP PVM PHP Version Manager
+    composer global require hjbdev/pvm
+
+##################################################################
+Laravel
+
+    Barryvdh
+    composer require barryvdh/laravel-ide-helper
+    composer require barryvdh/laravel-debugbar
+
+    Beyondecode
+    composer require beyondecode/laravel-query-detector
+
+    Spatie
+    composer require spatie/laravel-backup
+    composer require spatie/laravel-permission
+
+    Kitlong
+    composer require kitlong/laravel-migrations-generator --dev
+
+    Sail
+    composer require laravel/sail --dev
+
+    Negar autenticação simultâne
+        >> Kernel
+            >> AuthenticateSession
+                LoginController
+                    >> Override Método
+                    - Authenticate(Rquest $request, $user){
+                        Auth::logoutOtherDevices($request('password'));
+                    }
+
+##################################################################
+Django Init Project
+
+    Venv
+    - python -m venv "NAME_venv"
+
+    Activate/Deactivate
+    - source venv/bin/activate
+
+    - source venv/bin/deactivate
+
+    The pronpt will change to (name_venv_ django_
+
+    - pip install django
+        - django-admin start project project_name
+            - cd project_name
+                - python manage.py migrate
+                - python mangge.py runserver
+
+
+##################################################################
+Git
+
+    git init
+
+    git add README.md
+
+    git commit -m "First commit"
+
+    git branch -m main
+
+    git remote add origin git@github.com:AlendreLoeps/project_name.git
+
+    git push -u origin main
+
+    - - - - - - - - - - - - - - - -
+
+    git remote add origin git@github.com:AlendreLopes/project_name.git
+
+    git branch -m main
+
+    git push -u origin main
