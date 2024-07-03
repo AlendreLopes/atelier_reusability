@@ -1,0 +1,46 @@
+Step 1
+    Choose an Amazon Machine Image (AMI)
+        Selected a AMI
+Step 2
+    Choose an Instance type
+        General Propose
+Step 3
+    Got to >> Advanced Details
+        Insert in text box:
+        User data
+            "
+                User date is a resource that where you can insert a short script to realize determinate action on deploying of the your instance
+            when your instante would're created automatic all in this text box is executed.
+            "
+            #!/bin/bash
+
+            yum update -y
+            yum install httpd -y
+            systemctl start httpd
+            systemctl enable httpd
+Step 4
+    Your instance will be launched with the following storage device settings.
+        Notting to do in this page
+Step 5
+    Add tags
+        Noting to do here again
+Step 6
+    Configure Security Group
+        Next we'll set port 80 to service apache running correctly
+Step 7
+    Review Instance launched
+        Launch Instance
+            Select Key Pair
+                Launch Instance
+Step 8
+    Select Security Group
+        Go to
+            Inbound Rules
+                Clique in Edit button
+                    Add
+                        Httpd Anywhere; Remove IpV6;
+                            Save Configure
+
+Create AMI
+    Select your Instance and clic in Actions >> Image >> Create Image
+        

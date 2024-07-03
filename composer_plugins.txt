@@ -49,9 +49,10 @@ Laravel
     Spatie
     composer require spatie/laravel-backup
     composer require spatie/laravel-permission
+    composer require spatie/laravel-pdf
 
     Kitlong
-    composer require kitlong/laravel-migrations-generator --dev
+    composer require kitloong/laravel-migrations-generator --dev
 
 
     Sail
