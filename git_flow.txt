@@ -1,0 +1,65 @@
+install -d -m 0755 /home/alendre/.cache/yay/gitflow-avh/pkg/gitflow-avh/usr/bin
+install -d -m 0755 /home/alendre/.cache/yay/gitflow-avh/pkg/gitflow-avh/usr/share/doc/gitflow/hooks
+install -m 0755 git-flow /home/alendre/.cache/yay/gitflow-avh/pkg/gitflow-avh/usr/bin
+install -m 0644 git-flow-init git-flow-feature git-flow-bugfix git-flow-hotfix git-flow-release git-flow-support git-flow-version git-flow-log git-flow-config gitflow-common gitflow-shFlags /home/alendre/.cache/yay/gitflow-avh/pkg/gitflow-avh/usr/bin
+install -m 0644 
+
+############################# Hotfix
+hooks/filter-flow-hotfix-finish-tag-message 
+hooks/filter-flow-hotfix-start-version 
+
+############################# Release
+hooks/filter-flow-release-branch-tag-message 
+hooks/filter-flow-release-finish-tag-message 
+hooks/filter-flow-release-start-version 
+
+############################# Bugfix
+hooks/post-flow-bugfix-delete 
+hooks/post-flow-bugfix-finish 
+hooks/post-flow-bugfix-publish 
+hooks/post-flow-bugfix-pull 
+hooks/post-flow-bugfix-start 
+hooks/post-flow-bugfix-track 
+
+############################# Feature
+hooks/post-flow-feature-delete 
+hooks/post-flow-feature-finish 
+hooks/post-flow-feature-publish hooks/post-flow-feature-pull 
+hooks/post-flow-feature-start 
+
+############################# Flow
+hooks/post-flow-feature-track 
+hooks/post-flow-hotfix-delete 
+hooks/post-flow-hotfix-finish 
+hooks/post-flow-hotfix-publish 
+hooks/post-flow-hotfix-start 
+hooks/post-flow-release-branch 
+hooks/post-flow-release-delete 
+hooks/post-flow-release-finish 
+hooks/post-flow-release-publish 
+hooks/post-flow-release-start 
+hooks/post-flow-release-track 
+
+############################# Pre flow Feature
+hooks/pre-flow-feature-delete 
+hooks/pre-flow-feature-finish 
+hooks/pre-flow-feature-publish 
+hooks/pre-flow-feature-pull 
+hooks/pre-flow-feature-start 
+hooks/pre-flow-feature-track 
+
+############################# Pre flow Hotfix
+hooks/pre-flow-hotfix-delete 
+hooks/pre-flow-hotfix-finish 
+hooks/pre-flow-hotfix-publish 
+hooks/pre-flow-hotfix-start 
+
+############################# Pre flow Release
+hooks/pre-flow-release-branch 
+hooks/pre-flow-release-delete 
+hooks/pre-flow-release-finish 
+hooks/pre-flow-release-publish 
+hooks/pre-flow-release-start 
+hooks/pre-flow-release-track 
+
+/home/alendre/.cache/yay/gitflow-avh/pkg/gitflow-avh/usr/share/doc/gitflow/hooks
