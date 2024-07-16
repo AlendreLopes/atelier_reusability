@@ -1,0 +1,24 @@
+Access VPC
+    Create VPC
+    Tags : key => Value
+        >> Name => go-tickets-VPC
+    IPv4 CIDR Block
+    >> IPv4 CIDR manual input
+        >> 10.0.0.0/16
+    No IPv6 Block
+    >> No IPv6 Block
+Access Subnet
+    Create a Subnet
+    Tags : key => Value
+        >> Name => go-tickets-subnet-01
+        Edit subnets settings
+            Auto-assign Ip Settings
+            >> Enable auto-assign public IPv4 address
+Access Gateway
+    Create a Gateway
+    Tags : key => Value
+        >> Name => go-tickets-gateway
+Access Table Routes
+    Create a Table Routes
+    Tags : key => Value
+        >> Name => go-tickets-routes

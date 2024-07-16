@@ -1,0 +1,69 @@
+## hub.docker.com
+
+## commands
+docker compose up -d agreements owners
+
+docker exec -it old_backend bash
+
+docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' alendre_booker-mysql-1
+
+docker stop $(docker container ls -aq)
+docker stop $(docker ps -q)
+
+docker restart container_one 90b8831a4b8
+
+docker restart $(docker ps -a -q)
+
+docker rmi $(docker images -aq)
+docker rmi $(docker images -a -q)
+
+docker image prune -a
+
+# Docker Swarm
+---
+docker swarm init
+docker swarm join --token SWMTKN-1-1v5k50s86wm9jpu1y8rkg6rvgduxwq9ekw7yl72ylv7fh9r4rc-d10aplzmbwerbw2fx7031jnah 192.168.15.17:2377
+    ---
+    docker swarm join-token worker
+    docker swarm join --token SWMTKN-1-1v5k50s86wm9jpu1y8rkg6rvgduxwq9ekw7yl72ylv7fh9r4rc-d10aplzmbwerbw2fx7031jnah 192.168.15.17:2377
+
+---
+docker run --rm --volume "/home/project-node-docker:/srv/app" --workdir "/srv/app" --publish 3000:3000 -it node:12 bash
+
+npm init -y
+npm install express
+npm install nodemon
+
+sudo chown -R <USERNAME> /home/project-node-docker/
+
+---
+mysql
+Funcionando
+docker run --name mysql_5 --network mysql -v $HOME/desprojets/docker/volumes/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=mysql -d mysql:5.7
+    ---
+    ## docker run --name mysql_laravel --network mysql_laravel -v $HOME/desprojets/docker/volumes/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=mysql_laravel -d mysql:5.7
+
+---
+Postgres
+docker run --rm --name postgres_yii2 --network postgres_yii2 -e POSTGRES_PASSWORD=postgres_yii2 -d -p 5432:5432 -v $HOME/desprojets/alendre_docker/volumes/postgres:/var/lib/postgresql/data postgres
+    ---
+    ## docker run --rm --name postgres_laravel --network postgres_laravel -e POSTGRES_PASSWORD=postgres_laravel -d -p 5432:5432 -v $HOME/desprojets/alendre_docker/volumes/postgres:/var/lib/postgresql/data postgres
+
+---
+MongoDB
+docker run --name mongodb -d -p 27017:27017 --network mongodb mongodb/mongodb-community-server:6.0.1-ubi8
+
+    docker run --name mongodb -d -p 27017:27017 --network mongodb -v $HOME/desprojets/docker/volumes/data:/data/db mongodb/mongodb-community-server:6.0.1-ubi8
+
+    docker run --name mongosh --network mongodb mongodb/mongodb-community-server:6.0.1-ubi8 mongosh mongodb://mongodb --eval "show dbs"
+
+    docker run -d --name mongosh --network mongodb rtsp/mongosh
+
+    docker run --rm -it rtsp/mongosh mongosh --network mongodb --mongodb://172.17.0.2:27017
+
+    ## docker run --name mongodb -d -p 27017:27017 --network mongodb -v $HOME/desprojets/docker/volumes/data:/data/db -e MONGO_INITDB_ROOT_USERNAME=user -e MONGO_INITDB_ROOT_PASSWORD=pass mongodb/mongodb-community-server:6.0.1-ubi8
+
+---
+## docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' <container_name_or_container_ID>
+
+

@@ -1,0 +1,21 @@
+Set a secret
+ruby -rsecurerandom -e 'puts SecureRandom.hex(20)'
+
+secret to
+alendre_lopes
+9606fe1e53cd71cb562ded8894ab1f5e46b57f65
+alendre_lopes Ngork
+26kriz0uqD6rPYec1UPiNbVro4n_5r7A9ndu8Qp1E1f1232oy
+
+alendre_winners
+d24a86a85d3578c420747d1d582ed27d0a068e29
+
+alendre_cleunice
+eaf839a9b70639685c3f4454ee15733dbdfeab67
+
+alendre_dasneuner
+2aeb975a75a0884f9b9eba5474ffa93332b57a30
+
+alendre_dasneuner_regularizaton
+f3f19d331172f39b0f04ef15d75d1c761a1d1871
+

@@ -24,15 +24,18 @@ hooks/post-flow-bugfix-track
 ############################# Feature
 hooks/post-flow-feature-delete 
 hooks/post-flow-feature-finish 
-hooks/post-flow-feature-publish hooks/post-flow-feature-pull 
+hooks/post-flow-feature-publish
+hooks/post-flow-feature-pull 
 hooks/post-flow-feature-start 
+hooks/post-flow-feature-track 
 
 ############################# Flow
-hooks/post-flow-feature-track 
 hooks/post-flow-hotfix-delete 
 hooks/post-flow-hotfix-finish 
 hooks/post-flow-hotfix-publish 
 hooks/post-flow-hotfix-start 
+
+############################# Flow
 hooks/post-flow-release-branch 
 hooks/post-flow-release-delete 
 hooks/post-flow-release-finish 
