@@ -54,9 +54,21 @@ Laravel
     Kitlong
     composer require kitloong/laravel-migrations-generator --dev
 
+    Telescope
+    composer require laravel/telescope
 
     Sail
     composer require laravel/sail --dev
+
+    Composer required packages:
+    composer require barryvdh/laravel-ide-helper && \ 
+    require barryvdh/laravel-debugbar && \ 
+    require spatie/laravel-backup && \ 
+    require spatie/laravel-permission && \ 
+    require spatie/laravel-pdf && \ 
+    require kitloong/laravel-migrations-generator --dev && \ 
+    composer require laravel/sail --dev
+
 
     Negar autenticação simultâne
         >> Kernel

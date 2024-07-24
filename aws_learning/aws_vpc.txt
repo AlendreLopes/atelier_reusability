@@ -7,6 +7,10 @@ Access VPC
         >> 10.0.0.0/16
     No IPv6 Block
     >> No IPv6 Block
+    DNS options
+    Enable DNS host names
+    Enable DNS resolutions
+
 Access Subnet
     Create a Subnet
     Tags : key => Value
@@ -14,10 +18,15 @@ Access Subnet
         Edit subnets settings
             Auto-assign Ip Settings
             >> Enable auto-assign public IPv4 address
+            >> 10.0.0.0/20
+            >> 10.0.16.0/20
+            >> 10.0.32.0/20
+
 Access Gateway
     Create a Gateway
     Tags : key => Value
         >> Name => go-tickets-gateway
+        
 Access Table Routes
     Create a Table Routes
     Tags : key => Value

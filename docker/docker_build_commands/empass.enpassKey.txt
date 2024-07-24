@@ -1,0 +1,38 @@
+$#@ma$PeTit#CHIEN$Bi#Tu@Ka#@
+
+@m!a#P@e$T#t%C$H&I%E*N&B(i*T)u*K+A_3=5-7!9@
+
+#b@i$t#u%K$A*0&4(9)4_2+3=
+
+Ampli/Boticario
+# b @ i $ t # u % K $ A * 0 & 4 ( 9 ) =
+
+#b@i$t#u%K$A*0&4(9)=
+
+Ponto Frio/Sandado/OLX/Dell/Suvinil
+#b@i$t#u%K$A*0&4(9
+
+754505959315
+
+saza.lattes#sbds@amarelos
+
+Natal Premiado PR
+!b@K!3@#$
+
+09b98T87K
+
+charutaria curitiba
+#@049423#@AKutib#@324940#@
+
+#@bituKA#@324940#@
+
+Hostinger Pass Data for Pet
+!"32@!P#@e$#t&%*&(*_)+_!"@!!"
+
+#@bi#@tu#@KA%$32#@49#@40%$
+
+n\E3o foi poss\EDvel satisfazer as depend\EAncias:
+- a instala\E7\E3o de icu (75.1-1) quebra a depend\EAncia 'libicui18n.so=74-64' requerida por electron25
+- Se poss\EDvel, remova electron25 e tente novamente
+- a instala\E7\E3o de icu (75.1-1) quebra a depend\EAncia 'libicuuc.so=74-64' requerida por electron25
+- Se poss\EDvel, remova electron25 e tente novamente

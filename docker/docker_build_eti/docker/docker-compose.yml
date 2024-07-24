@@ -1,0 +1,29 @@
+# ETI Docker
+    # > Docker Compose
+        # > docker_compose.yml
+version: '3.8'
+
+services:
+    web:
+        image: nginx:stable-alpine-slim
+        ports:
+         - 80:80
+        volumes:
+         - ./docker/nginx/:/etc/nginx/conf.d/
+         - ./:/var/www
+        networks:
+         - xnign-stekcit-go
+    
+    go-tickets-front:
+        image: node:latest
+
+    go-tickets-back:
+        image: php:8.0.2-fpm
+        volumes:
+         - ./:/var/www
+        networks:
+         - xnign-stekcit-go
+        
+networks:
+  xnign-stekcit-go:
+    driver: bridge

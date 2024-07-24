@@ -1,0 +1,112 @@
+
+# EspecializaTI
+    Class 03
+    Images >> CREATE IMAGES ON STATE FULLSTACK TO RUN APPLICATIONS
+        In advanced toggle go to field user data and put this script:
+
+        # Create script "User data" aws ec2, for install docker and docker-compose in linux with yum
+        # Here is an example of a script that can be used as user data for an AWS EC2 instance running a Linux AMI (with yum package manager) to install Docker and Docker Compose:
+        #!/bin/bash
+
+        # Install Docker
+        sudo yum update -y
+        sudo yum install -y docker
+
+        # Start the Docker service
+        sudo service docker start
+
+        # Add the current user to the "docker" group
+        sudo usermod -a -G docker $USER
+
+        # Install Docker Compose
+        sudo curl -L "https://github.com/docker/compose/releases/download/1.28.6/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+        sudo chmod +x /usr/local/bin/docker-compose
+
+Access instance
+  Connect
+    SSH Client
+      1 Connect SSH Client
+      2 Locate our SSH Key
+      3 Run the command code
+        >> chmod 400 key-default.pem
+      4 Connect to Instance Public DNS
+        >> ssh -i key-default.pem ec2-user@Public DNS
+
+Docker Pull
+    >> docker run --rm --name my_mysql -MYSQL_ROOT_PASSWORD=my_password -d mysql:5.7.33
+Docker Run Container MySQL
+    >> docker exec -it my_mysql mysql -u admin --host=ENDPOINT_AWS_RDS -p 
+        >> Environment MySQL to Create table = 'laravel'
+            >> CREATE TABLE laravel;
+Docker Run Container Application
+    >> docker-compose exec application bash
+        >> Run migrations
+            >> php artisan migrate
+
+05 - Scaling Horizontal
+    06 - EC2 Auto scaling groups
+        >> Automating scaling
+            >> Dynamic scaling polices
+                >> This service up and down instances depending of traffic
+                >> Policy type
+                    > Target traffic scaling 
+                >> Scaling Policy name
+                    > go-tickets-target-tracking-policy
+                >> Metric type
+                    > Average CPU utilization
+                >> Target Value
+                    > 50
+                >> Instances need
+
+    07 - Set domain name with route 53
+        >> Host zones
+            > Domain name
+                >> goingressos.com.br
+            > Description
+                >> Domain name of Go tickets
+            > Type
+                >> Public hosted zone
+            > Tags
+                >> Key >> Name
+                    > Domain >> to-tickets-domain
+                
+                > Access the domain
+                    > Get n NS names and set on registro.br
+                    >> Create record
+                        > Record
+                            >> Record name - Record type
+                                > Alias
+                                    >> Route traffic to
+                                        > Alias to application and Classic Load Balance
+                                            > US East Virgin
+                                                > Choose the load balance
+                                                    >> go-tickets-load-balancer
+    08 - AWS Certificate Manager
+        >> Request a certificate
+            > Request a public certificate
+                > Next
+                    > Domains name
+                        > Fully qualified domain name
+                            > goingressos.com.br
+                        > Validation Method
+                            > DNS Validation - recommended
+                        > Key algorithm
+                            > RSA 2048
+                        > Tags
+                            >> Key - Name
+                                > go-tickets-certificates => go-tickets-certificate-manager
+        >> Access certificate
+            > Domains
+                > Create records in Route 53
+    09 - EC2
+        > Load Balancer
+            > Listener
+                > Add listener
+                    > Listener actions
+                        > Forward
+                            > go-tickets-target-groups
+                        > Secure listener settings
+                            > Security policy
+                                > ELBSecurityPolicy
+                            > Default SSL/TLS certificate
+                                > From ACM - goingressos.com.br

@@ -40,3 +40,5 @@
     "EnableResourceNameDnsAAAARecord": false
   }
 }
+After you stop the instance, you are no longer charged usage or data transfer fees for it. However, you will still be billed for associated resources, 
+such as attached EBS volumes and associated Elastic IP addresses.
