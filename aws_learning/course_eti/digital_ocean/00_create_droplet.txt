@@ -1,0 +1,117 @@
+Digital Ocean
+    https://m.do.co/c/c0459803ffa3
+
+Create a droplet
+    Access through terminal
+        ssh root@IpMachine
+            Add new user
+                adduser
+                    go-tickets
+                password > to run commands sudo
+                    0987654321
+                    y > to confirm
+            Add this user to group sudo
+                usermod -aG sudo go-tickets
+                Verify if the user was add
+                    su - go-tickets
+            Create directory and copy ssh-keys on ~/root/.ssh to folder .ssh
+                mkdir .ssh
+                Access directory .ssh
+                    cd .ssh
+                        sudo cd /root/.ssh/authorize_keys .
+                    Verify if all files was copied
+                        ls -al
+                        In this case we need change owner of ssh-keys
+                            Change owner ssh key
+                                sudo chown go-tickets:go-tickets authorize_keys
+                            Verify if changes was success
+                                ls -al
+            exit of droplet
+        Now we'll access with user go-tickets
+            ssh go-tickets@IpMachine
+        exit to go out of IdMachine
+    Disable user root in droplet
+        Access droplet with user that we create before
+            ssh go-tickets@IpMachine
+                Edit file sshd with nano
+                    sudo nano /etc/ssh/sshd_config
+                        Change this line:
+                            Default is:
+                                PermitRootLogin yes
+                            Change to
+                                PermitRootLogin no
+                        After this step we need restart service sshd
+                            sudo service ssh restart
+                        Exit of IdMachine
+                    Try access droplet with user root
+                        This action was not allowed
+Create a firewall to droplet
+    Click on droplet and go to:
+        Network
+            Firewall
+                Create and configure new firewall
+                    Inbound
+                        Model   Port    Source
+                        SSH     22      All IPv4 IPv6
+                        Http    80      All IPv4 IPv6
+                        Https   443     All IPv4 IPv6
+                    Outbound
+                        Its all okay
+Create monitoring
+    Bandwidth:
+        - Inbound
+        - Outbound
+    CPU usage:
+        - 70% during 5 minutes
+            - Send e-mail
+    Disk
+        - Read above 70%
+    Memory
+        - 70% during 5 minutes
+            - Send e-mail
+Deploy application
+
+Cloudflare Configuration
+    Domain
+        A @             IpDroplet
+        A www           IpDroplet
+        A subdomain     IpDroplet
+        SSL/TLS         Flexible
+    Firewall
+        Tools
+            Rate Limiting
+                Create rule
+                    Http & Https    *
+                        50 time in 1 minutes
+                            Bock for 1 hour
+Database
+    Create
+        Choose Database
+            Mysql
+                Machine Type    Node Plan                   Standby Nodes
+                Basic Nodes     1GB Ram 1vCPU 10GB Disk     $0/mo
+            Monthly Cost
+                $15 $0.022/hr
+            Choose a Data center
+                The same region with your droplet
+            VPC Network
+                Same VPC
+            Finalize and Create
+                Enter the Database name
+                    go_tickets_database
+            Select Project
+                go_tickets_backend
+        Getting Started
+            Create database cluster
+                Done step above
+            Secure this database cluster
+                Set which droplets that can access this database
+            Connection details
+                Data
+            Next steps
+                Get command line available through droplet that can access database
+        Create New user and Database
+            Users
+                go_tickets_user
+            Database
+                go_tickets

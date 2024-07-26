@@ -10,7 +10,7 @@ Step 3
         User data
             "
                 User date is a resource that where you can insert a short script to realize determinate action on deploying of the your instance
-            when your instante would're created automatic all in this text box is executed.
+            when your instance would're created automatic all in this text box is executed.
             "
             #!/bin/bash
 
@@ -20,7 +20,7 @@ Step 3
             systemctl enable httpd
 Step 4
     Your instance will be launched with the following storage device settings.
-        Notting to do in this page
+        Noting to do in this page
 Step 5
     Add tags
         Noting to do here again
@@ -42,5 +42,5 @@ Step 8
                             Save Configure
 
 Create AMI
-    Select your Instance and clic in Actions >> Image >> Create Image
+    Select your Instance and click in Actions >> Image >> Create Image
         
