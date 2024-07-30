@@ -1,88 +1,102 @@
 
 # EspecializaTI
     Class 03
-    Images >> CREATE IMAGES ON STATE FULLSTACK TO RUN APPLICATIONS
+    Images > CREATE IMAGES ON STATE FULLSTACK TO RUN APPLICATIONS
         In advanced toggle go to field user data and put this script:
 
         # Create script "User data" aws ec2, for install docker and docker-compose in linux with yum
         # Here is an example of a script that can be used as user data for an AWS EC2 instance running a Linux AMI (with yum package manager) to install Docker and Docker Compose:
         #!/bin/bash
 
-        # Install Docker
+        type -p yum-config-manager >/dev/null
         sudo yum update -y
-        sudo yum install -y docker
-
+        sudo yum-config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo
+        sudo yum install -y yum-utils
+        # Install Docker
+        sudo yum install -y gh docker
+        sudo yum update gh
         # Start the Docker service
         sudo service docker start
-
         # Add the current user to the "docker" group
-        sudo usermod -a -G docker $USER
+        # sudo usermod -a -G docker $USER
 
         # Install Docker Compose
-        sudo curl -L "https://github.com/docker/compose/releases/download/1.28.6/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-        sudo chmod +x /usr/local/bin/docker-compose
+        DOCKER_CONFIG=${DOCKER_CONFIG:-$HOME/.docker}
+        mkdir -p $DOCKER_CONFIG/cli-plugins
+        curl -SL https://github.com/docker/compose/releases/download/v2.29.1/docker-compose-linux-x86_64 -o $DOCKER_CONFIG/cli-plugins/docker-compose
+        sudo chmod +x $DOCKER_CONFIG/cli-plugins/docker-compose
 
-Access instance
+        # After all configured login in github
+        gh auth login
+            copy code
+                paste in browser session
+        
+Linux Commands
+    whoami
+    who -a
+    awk -F: '{ print $1 }' /etc/passwd or cut -d: -f1 /etc/passwd
+    cat /etc/passwd
+    
+Access instance with authorize_keys
   Connect
     SSH Client
       1 Connect SSH Client
       2 Locate our SSH Key
       3 Run the command code
-        >> chmod 400 key-default.pem
+        > chmod 400 key-default.pem
       4 Connect to Instance Public DNS
-        >> ssh -i key-default.pem ec2-user@Public DNS
+        > ssh -i key-default.pem ec2-user@Public DNS
 
 Docker Pull
-    >> docker run --rm --name my_mysql -MYSQL_ROOT_PASSWORD=my_password -d mysql:5.7.33
+    > docker run --rm --name my_mysql -MYSQL_ROOT_PASSWORD=my_password -d mysql:5.7.33
 Docker Run Container MySQL
-    >> docker exec -it my_mysql mysql -u admin --host=ENDPOINT_AWS_RDS -p 
-        >> Environment MySQL to Create table = 'laravel'
-            >> CREATE TABLE laravel;
+    > docker exec -it my_mysql mysql -u admin --host=ENDPOINT_AWS_RDS -p 
+        > Environment MySQL to Create table = 'laravel'
+            > CREATE TABLE laravel;
 Docker Run Container Application
-    >> docker-compose exec application bash
-        >> Run migrations
-            >> php artisan migrate
+    > docker-compose exec application bash
+        > Run migrations
+            > php artisan migrate
 
 05 - Scaling Horizontal
     06 - EC2 Auto scaling groups
-        >> Automating scaling
-            >> Dynamic scaling polices
-                >> This service up and down instances depending of traffic
-                >> Policy type
+        > Automating scaling
+            > Dynamic scaling polices
+                > This service up and down instances depending of traffic
+                > Policy type
                     > Target traffic scaling 
-                >> Scaling Policy name
+                > Scaling Policy name
                     > go-tickets-target-tracking-policy
-                >> Metric type
+                > Metric type
                     > Average CPU utilization
-                >> Target Value
+                > Target Value
                     > 50
-                >> Instances need
+                > Instances need
 
     07 - Set domain name with route 53
-        >> Host zones
+        > Host zones
             > Domain name
-                >> goingressos.com.br
+                > goingressos.com.br
             > Description
-                >> Domain name of Go tickets
+                > Domain name of Go tickets
             > Type
-                >> Public hosted zone
+                > Public hosted zone
             > Tags
-                >> Key >> Name
-                    > Domain >> to-tickets-domain
-                
+                > Key > Name
+                    > Domain > to-tickets-domain
                 > Access the domain
                     > Get n NS names and set on registro.br
-                    >> Create record
+                    > Create record
                         > Record
-                            >> Record name - Record type
+                            > Record name - Record type
                                 > Alias
-                                    >> Route traffic to
+                                    > Route traffic to
                                         > Alias to application and Classic Load Balance
                                             > US East Virgin
                                                 > Choose the load balance
-                                                    >> go-tickets-load-balancer
+                                                    > go-tickets-load-balancer
     08 - AWS Certificate Manager
-        >> Request a certificate
+        > Request a certificate
             > Request a public certificate
                 > Next
                     > Domains name
@@ -93,9 +107,9 @@ Docker Run Container Application
                         > Key algorithm
                             > RSA 2048
                         > Tags
-                            >> Key - Name
+                            > Key - Name
                                 > go-tickets-certificates => go-tickets-certificate-manager
-        >> Access certificate
+        > Access certificate
             > Domains
                 > Create records in Route 53
     09 - EC2

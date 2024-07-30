@@ -1,6 +1,5 @@
 Digital Ocean
     https://m.do.co/c/c0459803ffa3
-
 Create a droplet
     Access through terminal
         ssh root@IpMachine
@@ -8,7 +7,7 @@ Create a droplet
                 adduser
                     go-tickets
                 password > to run commands sudo
-                    0987654321
+                    09876c0459803ffa354321
                     y > to confirm
             Add this user to group sudo
                 usermod -aG sudo go-tickets
