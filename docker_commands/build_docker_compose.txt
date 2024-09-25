@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+docker run --rm \
+    -u $(id -u):$(id -g) \
+    -v $PWD:/app \
+    -v ${COMPOSER_HOME:-$HOME/.composer}:/tmp \
+    -w /app \
+    composer update
+
+# docker run --rm --interactive --tty \
+#     -u $(id -u):$(id -g) \
+#     -v $PWD:/app \
+#     -v ${COMPOSER_HOME:-$HOME/.composer}:/tmp \
+#     composer:2.2 update
+
+# docker run --rm --interactive --tty \
+#     --user $(id -u):$(id -g) \
+#     --volume $PWD:/app \
+#     --volume ${COMPOSER_HOME:-$HOME/.composer}:/tmp \
+#     --workdir /app \
+#     composer:latest \
+#     php:7.4.16-apache "$@"

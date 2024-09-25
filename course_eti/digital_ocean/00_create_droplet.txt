@@ -7,7 +7,11 @@ Create a droplet
                 adduser
                     go-tickets
                 password > to run commands sudo
-                    09876c0459803ffa354321
+                Create database go-tickets-database
+                docker run --rm --name mysql_edit -e MYSQL_ROOT_PASSWORD=password  -d mysql:latest
+                docker exec -it mysql_edit -u admin --host=ENDPOINT -p
+                    admin
+                    n$$09r87do6cw04$59803ffa35432&*1_
                     y > to confirm
             Add this user to group sudo
                 usermod -aG sudo go-tickets

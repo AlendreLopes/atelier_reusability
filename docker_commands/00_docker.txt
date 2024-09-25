@@ -40,7 +40,7 @@ sudo chown -R <USERNAME> /home/project-node-docker/
 ---
 mysql
 Funcionando
-docker run --name mysql_5 --network mysql -v $HOME/Desprojets/atelier_database/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=password -d mysql:5.7
+docker run --name mysql_5 --network mysql -v $HOME/Desprojets/atelier_database/mysql5:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=password -d mysql:5.7
     ---
     ## docker run --name mysql_laravel --network mysql_laravel -v $HOME/Desprojets/atelier_database/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=password -d mysql:5.7
 
@@ -65,7 +65,6 @@ docker run --name mongodb -d -p 27017:27017 --network mongodb -v $HOME/Desprojet
     ## docker run --name mongodb -d -p 27017:27017 --network mongodb -v $HOME/desprojets/docker/volumes/data:/data/db -e MONGO_INITDB_ROOT_USERNAME=user -e MONGO_INITDB_ROOT_PASSWORD=pass mongodb/mongodb-community-server:6.0.1-ubi8
 
 ---
-
 # Docker Limiter CPU and Memory
 ---
 docker run -itd --m 1024M --cpus 0.2 images
