@@ -207,6 +207,14 @@ tablePrefix=tbl*, the ActiveRecord class will return the table name as
 ## Yii2 GII CRUD
 
 CRUD
+################
+yii gii/model --generateQuery=1 --generateRelationsFromCurrentSchema=1 --overwrite=1 --ns='backend\models' --modelClass='MlUPartialUrineText' --tableName='ml_u_partial_urine_text' --queryNs='backend\models\query' --queryClass='MlUPartialUrineTextQuery'
+
+yii gii/crud  --modelClass='backend\models\MlUPartialUrineText' --controllerClass='backend\controllers\MlUPartialUrineTextController' --baseControllerClass='backend\controllers\AppController' --searchModelClass='backend\models\MlUPartialUrineTextSearch' --viewPath='backend/views/ml-u-partial-urine-text' --color=1
+
+################
+--
+
 # yii gii/crud --modelClass='backend\models\LaudosScEletrocardiograma' --controllerClass='backend\controllers\LaudosScEletrocardiogramaController'
 --baseControllerClass='common\controllers\AppController' --viewPath='backend/views/laudos-sc-eletrocardiograma' --color=1 --enablePjax=1
 

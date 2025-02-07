@@ -1,3 +1,10 @@
+
+Scoundel
+APIToken
+Your Profile
+ltCwHUiY7X3OcVTf7OsxYlZBH6dPTP2lZZq8ExTI56946141
+
+
 ## hub.docker.com
 
 ## commands
@@ -29,7 +36,7 @@ docker swarm join --token SWMTKN-1-1v5k50s86wm9jpu1y8rkg6rvgduxwq9ekw7yl72ylv7fh
 
 # Docker Container
 ---
-docker run --rm --v "$HOME/Desprojets/atelier_database/node:/srv/app" --workdir "/srv/app" --publish 3000:3000 -it node:12 bash
+docker run --rm --v "$HOME/Desprojets/Development/atelier_database/node:/srv/app" --workdir "/srv/app" --publish 3000:3000 -it node:12 bash
 
 npm init -y
 npm install express
@@ -40,7 +47,7 @@ sudo chown -R <USERNAME> /home/project-node-docker/
 ---
 mysql
 Funcionando
-docker run --name mysql_5 --network mysql -v $HOME/Desprojets/atelier_database/mysql5:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=password -d mysql:5.7
+docker run --name mysql_5 --network mysql -v $HOME/Desprojets/Development/atelier_database/mysql5:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=password -d mysql:5.7
     ---
     ## docker run --name mysql_laravel --network mysql_laravel -v $HOME/Desprojets/atelier_database/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=password -d mysql:5.7
 

@@ -60,6 +60,13 @@ Laravel
     Sail
     composer require laravel/sail --dev
 
+    Jetstream
+    sail composer require laravel/jetstream
+        sail artisan jetstream:install inertia
+            npm install
+            npm run build
+            sail artisan migrate
+
     Composer required packages:
     composer require barryvdh/laravel-ide-helper && \ 
     require barryvdh/laravel-debugbar && \ 

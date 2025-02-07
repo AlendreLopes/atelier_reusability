@@ -6,6 +6,11 @@ docker run --rm \
     -w /app \
     composer update
 
+docker run --rm --interactive --tty \
+  --volume $PWD:/app \
+  --user $(id -u):$(id -g) \
+  composer <command>
+
 # docker run --rm --interactive --tty \
 #     -u $(id -u):$(id -g) \
 #     -v $PWD:/app \

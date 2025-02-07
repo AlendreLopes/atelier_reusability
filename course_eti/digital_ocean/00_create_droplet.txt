@@ -11,7 +11,7 @@ Create a droplet
                 docker run --rm --name mysql_edit -e MYSQL_ROOT_PASSWORD=password  -d mysql:latest
                 docker exec -it mysql_edit -u admin --host=ENDPOINT -p
                     admin
-                    n$$09r87do6cw04$59803ffa35432&*1_
+                    #@26kriz0uqD6r$#PYec1UPiNbVr%$o4n_5r7A9ndu&%
                     y > to confirm
             Add this user to group sudo
                 usermod -aG sudo go-tickets
@@ -19,14 +19,15 @@ Create a droplet
                     su - go-tickets
             Create directory and copy ssh-keys on ~/root/.ssh to folder .ssh
                 mkdir .ssh
+                ls -al
                 Access directory .ssh
                     cd .ssh
-                        sudo cd /root/.ssh/authorize_keys .
+                        sudo cd /root/.ssh/authorized_keys .
                     Verify if all files was copied
                         ls -al
                         In this case we need change owner of ssh-keys
                             Change owner ssh key
-                                sudo chown go-tickets:go-tickets authorize_keys
+                                sudo chown go-tickets:go-tickets authorized_keys
                             Verify if changes was success
                                 ls -al
             exit of droplet
