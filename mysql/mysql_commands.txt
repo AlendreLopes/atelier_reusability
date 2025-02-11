@@ -1,0 +1,21 @@
+create table with data of another table
+
+create table TABLE SELECT * FROM TABLE;
+
+ALTER TABLE `veterinarians`.`veterinarians_data`
+CHANGE COLUMN `veterinarians_id` `veterinarians_id` VARCHAR(45) NULL DEFAULT NULL AFTER `id`;
+
+Update column with value of another column
+
+update veterinarians.veterinarians_data set veterinarians.veterinarians_data.veterinarians_id = veterinarians.veterinarians_data.id;
+
+update protocols.protocols_data set protocols.protocols_data.protocols_id = protocols.protocols_data.id;
+
+UPDATE COLUMN WITH ANOTHER COLUMN IN OTHER
+
+update protocols.protocols_exams set protocols_id =
+(select protocolos_exames.protocolos_id from protocolos_exames where protocolos_exames.id = protocols_exams.protocolos_exames_id);
+
+Using if confitinal
+
+select *, IF(points>=5,'pass','fail') as grade from sports;

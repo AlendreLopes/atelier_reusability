@@ -71,15 +71,16 @@ docker run --name mongodb -d -p 27017:27017 --network mongodb -v $HOME/Desprojet
 
     ## docker run --name mongodb -d -p 27017:27017 --network mongodb -v $HOME/desprojets/docker/volumes/data:/data/db -e MONGO_INITDB_ROOT_USERNAME=user -e MONGO_INITDB_ROOT_PASSWORD=pass mongodb/mongodb-community-server:6.0.1-ubi8
 
----
+#############################################################################
+#############################################################################
 # Docker Limiter CPU and Memory
 ---
 docker run -itd --m 1024M --cpus 0.2 images
-
+#############################################################################
 # Stats
 ---
 docker stats Id Container
-
+#############################################################################
 # Stress
 ---
 docker exec -it Id Container bash
@@ -87,15 +88,17 @@ docker exec -it Id Container bash
     > yum install stress
     > stress --help
         > stress --cpu 8 --io 4 --vm 2 --vm-bytes 128M --timeout 20s
+#############################################################################
 # Update Container
 ---
 docker update Id Container --m 512M --cpus 0.3
-
+#############################################################################
 # Info/Inspect/Logs and Top inside of container
 ---
 docker info/inspect/logs Id Container
     > docker exec -it Id Container bash
         > top / top -h
+#############################################################################
 # Run top outside Container
 ---
 docker top Id Container
