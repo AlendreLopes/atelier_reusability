@@ -1,0 +1,21 @@
+sudo apt install certbot python3-certbot-apache -yes
+
+ufw allown 'Apache Full'
+ufw delete allow apache
+ufw status
+
+certbot --apache email: no-reaply@alendre.com.br
+
+Agree -A
+
+Yes -y
+
+empty to allow all domains
+
+HTTPS ->2
+
+certbot renew
+
+sudo systemctl status certbot timer
+
+sudo certbot renew --dry-run
