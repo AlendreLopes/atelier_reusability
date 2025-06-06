@@ -68,8 +68,8 @@ Laravel
             sail artisan migrate
 
     Composer required packages:
-        composer require barryvdh/laravel-ide-helper
-        composer require barryvdh/laravel-debugbar
+        composer require barryvdh/laravel-ide-helper --dev
+        composer require barryvdh/laravel-debugbar --dev
 
         composer require spatie/laravel-backup
         composer require spatie/laravel-permission
@@ -78,6 +78,8 @@ Laravel
         composer require kitloong/laravel-migrations-generator --dev
 
         composer require laravel/sail --dev
+
+        sail artisan storage:link
 
     Laravel
     Negar autenticação simultâne
