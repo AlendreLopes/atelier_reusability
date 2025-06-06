@@ -1,17 +1,13 @@
-Set a secret
+
 ruby -rsecurerandom -e 'puts SecureRandom.hex(20)'
 
-secret to
 alendre_lopes
 9606fe1e53cd71cb562ded8894ab1f5e46b57f65
 
 alendre_lopes NgorkHosts
 26kriz0uqD6rPYec1UPiNbVro4n_5r7A9ndu8Qp1E1f1232oy
 
-Use este recurso para se conectar ao nosso servidor MySQL a partir do seu computador ou de outro servidor. Simplesmente adicione o seu endereço de IP que irá se conectar ao nosso servidor MySQL e escolha o nome do banco de dados da lista com a qual você quer se conectar.
-
 O hostname do nosso servidor MySQL é: srv484.hstgr.io ou você pode usar este IP como seu hostname: 31.170.167.52
-
 
 alendre_winners
 d24a86a85d3578c420747d1d582ed27d0a068e29
@@ -25,39 +21,7 @@ alendre_dasneuner
 alendre_dasneuner_regularizaton
 f3f19d331172f39b0f04ef15d75d1c761a1d1871
 
-alendre_hostinger
-#@26kriz0uqD6r$#PYec1UPiNbVr%$o4n_5r7A9ndu&%
-
-passphaser
+########################################
 @a!t#E@L$i#E%R$9&4%8*2&5(1)=
-@a!t#E@L$i#E%R$9&4%8*2&5(3)1=
-
-Deployment start
-Repository git@github.com:AlendreLopes/alendre_petimagem_v1.git
-Checking project directory is empty
-Project directory is empty
-Cloning code repository
-clone: fatal: Could not read from remote repository.
-Please make sure you have the correct access rights and the repository exists.
-Deployment failed
-
-Fatal error: Uncaught Error: Call to undefined function Composer\Util\symlink() in phar:///usr/local/bin/composer1.phar/src/Composer/Util/Filesystem.php:578
-Stack trace:
-#0 phar:///usr/local/bin/composer1.phar/src/Composer/Installer/BinaryInstaller.php(160): Composer\Util\Filesystem->relativeSymlink()
-#1 phar:///usr/local/bin/composer1.phar/src/Composer/Installer/BinaryInstaller.php(88): Composer\Installer\BinaryInstaller->installSymlinkBinaries()
-#2 phar:///usr/local/bin/composer1.phar/src/Composer/Installer/LibraryInstaller.php(102): Composer\Installer\BinaryInstaller->installBinaries()
-#3 phar:///usr/local/bin/composer1.phar/src/Composer/Installer/InstallationManager.php(173): Composer\Installer\LibraryInstaller->install()
-#4 phar:///usr/local/bin/composer1.phar/src/Composer/Installer/InstallationManager.php(160): Composer\Installer\InstallationManager->install()
-#5 phar:///usr/local/bin/composer1.phar/src/Composer/Installer.php(611): Composer\Installer\InstallationManager->execute()
-#6 phar:///usr/local/bin/composer1.phar/src/Composer/Installer.php(232): Composer\Installer->doInstall()
-#7 phar:///usr/local/bin/composer1.phar/src/Composer/Command/UpdateCommand.php(163): Composer\Installer->run()
-#8 phar:///usr/local/bin/composer1.phar/vendor/symfony/console/Command/Command.php(245): Composer\Command\UpdateCommand->execute()
-#9 phar:///usr/local/bin/composer1.phar/vendor/symfony/console/Application.php(835): Symfony\Component\Console\Command\Command->run()
-#10 phar:///usr/local/bin/composer1.phar/vendor/symfony/console/Application.php(185): Symfony\Component\Console\Application->doRunCommand()
-#11 phar:///usr/local/bin/composer1.phar/src/Composer/Console/Application.php(283): Symfony\Component\Console\Application->doRun()
-#12 phar:///usr/local/bin/composer1.phar/vendor/symfony/console/Application.php(117): Composer\Console\Application->doRun()
-#13 phar:///usr/local/bin/composer1.phar/src/Composer/Console/Application.php(113): Symfony\Component\Console\Application->run()
-#14 phar:///usr/local/bin/composer1.phar/bin/composer(64): Composer\Console\Application->run()
-#15 /usr/local/bin/composer1.phar(24): require('phar:///usr/loc...')
-#16 {main}
-  thrown in phar:///usr/local/bin/composer1.phar/src/Composer/Util/Filesystem.php on line 578
+########################################
+#@26kriz0uqD6r$#PYec1UPiNbVr%$o4n_5r7A9ndu&%
