@@ -57,6 +57,7 @@ docker run --rm --name postgres_yii2 --network postgres_yii2 -e POSTGRES_PASSWOR
     ---
     ## docker run --rm --name postgres_laravel --network postgres_laravel -e POSTGRES_PASSWORD=postgres_laravel -d -p 5432:5432 -v $HOME/Desprojets/atelier_database/postgres:/var/lib/postgresql/data postgres
 
+docker run --name postgres_local --env POSTGRES_PASSWORD=password --volume postgres-volume:/var/lib/postgresql/data --publish 5432:5432 --detach postgres:17
 ---
 MongoDB
 docker run --name mongodb -d -p 27017:27017 --network mongodb -v $HOME/Desprojets/atelier_database/mongodb:/data/db mongodb/mongodb-community-server:6.0.1-ubi8
